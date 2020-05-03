@@ -1,0 +1,56 @@
+.navbar {
+  border-bottom: 6px solid #8f060683;
+  border-radius: 120px;
+  background-color: white !important;
+}
+
+h3.nav-link {
+  padding-left: 600px;
+}
+
+.navbar {
+  box-shadow: none;
+}
+
+
+.btn {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+}
+
+ul {
+  border: none !important;
+  font-size: 20px;
+}
+
+nav a {
+  color: black;
+  transition: background 1.5s ease-in-out;
+  border-bottom: none; /* define a light blue border for the link */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav-item a:hover {
+  color: white;
+  background: #b1b1b1;
+  border: 1px solid transparent;
+  transition: background 0.3s ease-in-out;
+}
+
+li.nav:hover {
+  background-color: #eeeeee;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.active-page {
+  background: white;
+}
+
+
+.modal-footer {
+  border-top: none;
+}
+
+.modal-header {
+  border-bottom: none;
+}
