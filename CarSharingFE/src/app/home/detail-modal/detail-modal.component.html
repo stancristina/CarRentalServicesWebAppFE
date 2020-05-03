@@ -1,0 +1,40 @@
+<div bsModal class=" row modal fade" #detailModal="bs-modal" tabindex="-1" style="margin-top:200px;">
+  <div class="col-md-6 col-sm-6 col-lg-8 mx-auto my-4" id="modal">
+
+    <div class="container col-lg-12">
+      <div class="row">
+
+        <div class="col-lg-8" style="padding-left:10px">
+          <div class="row">
+            <div class="details">
+              <ul>
+                <p> Details for rental #{{rental.id}}</p>
+                <li>Car id: {{rental.carId}}</li>
+                <li>Car Model: {{rental.carModel}}</li>
+                <li>Client id: {{rental.clientId}}</li>
+                <li>Client First Name: {{rental.clientFirstName}}</li>
+                <li>Client Last Name: {{rental.clientLastName}}</li>
+                <li>Start Date: {{rental.startDate}}</li>
+                <li>Period: {{rental.period}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="button">
+
+              <button type="button" class="btn btn-dark" (click)="addToCart(rental)">Add to cart</button>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+</div>

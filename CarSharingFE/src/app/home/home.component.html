@@ -1,0 +1,41 @@
+<div class="container">
+  <div>
+    <div id="container-content">
+      <form class="form-inline active-cyan-2 col-4 col-sm-4 px-0 mt-2">
+        <input
+          class="form-control form-control-sm mr-3 w-75 novalidate"
+          type="text"
+          placeholder="Search"
+          aria-label="Search"
+          name="search"
+          [(ngModel)]="searchText"
+          autocomplete="off"
+        />
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </form>
+
+      <div class="container">
+      
+        <div class="table-responsive" *ngIf="rentals">
+          <table class="table table-hover">
+            <thead class="thead-dark">
+              <th>Car</th>
+              <th>Client</th>
+              <th>Start Date</th>
+              <th>Period (days)</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let rental of rentals" (click)="showDM(rental.id)">
+                <td>{{rental.carModel}}</td>
+                <td>{{rental.clientFirstName}} {{rental.clientLastName}}</td>
+                <td>{{rental.startDate}}</td>
+                <td>{{rental.period}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-detail-modal #detailModal></app-detail-modal>

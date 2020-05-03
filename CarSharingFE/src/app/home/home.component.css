@@ -1,0 +1,28 @@
+#container-content {
+  padding: 20px;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 22px;
+  padding-top: 70px;
+}
+
+form {
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+.container {
+  max-width: 90%;
+}
+
+.add {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: 22px;
+  color: black;
+}
+
+.view .mask {
+  height: 88%;
+}
