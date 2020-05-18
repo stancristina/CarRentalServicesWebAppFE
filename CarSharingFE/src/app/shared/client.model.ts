@@ -1,9 +1,9 @@
 export class Client {
-    Id: number;
+    id: number;
     CNP: string;
-    FirstName: string;
-    LastName: string;
-    Address: string;
+    firstName: string;
+    lastName: string;
+    address: string;
  
    constructor(input?: any) {
      Object.assign(this, input);

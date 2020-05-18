@@ -1,7 +1,7 @@
 export class Car {
-   Id: number;
-   Model: string;
-   ShopId: number;
+   id: number;
+   model: string;
+   shopId: number;
 
   constructor(input?: any) {
     Object.assign(this, input);

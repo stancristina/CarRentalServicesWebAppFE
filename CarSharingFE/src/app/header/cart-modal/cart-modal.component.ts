@@ -24,6 +24,16 @@ export class CartModalComponent implements OnInit {
   }
 
   delete(id: number) {
-    this.rentals.splice(id, 1);
+    this.rentals = this.cartService.delete(id);
   }
+
+  add(rental: Rental) {
+      this.rentals = this.cartService.add(rental);
+  }
+
+  save() {
+    this.cartService.updateLocalStorage();
+    this.modal.hide();
+  }
+
 }

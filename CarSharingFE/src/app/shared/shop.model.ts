@@ -1,7 +1,7 @@
 export class Shop {
-    Id: number;
-    Name: string;
-    CityId: number;
+    id: number;
+    name: string;
+    cityId: number;
  
    constructor(input?: any) {
      Object.assign(this, input);

@@ -19,10 +19,10 @@
         <div class="table-responsive" *ngIf="rentals">
           <table class="table table-hover">
             <thead class="thead-dark">
-              <th>Car</th>
-              <th>Client</th>
-              <th>Start Date</th>
-              <th>Period (days)</th>
+              <th> <i class="fas fa-car"></i> Car</th>
+              <th> <i class="far fa-user"></i> Client</th>
+              <th> <i class="far fa-calendar-alt"></i> Start Date</th>
+              <th> Period (days)</th>
             </thead>
             <tbody>
               <tr *ngFor="let rental of rentals" (click)="showDM(rental.id)">

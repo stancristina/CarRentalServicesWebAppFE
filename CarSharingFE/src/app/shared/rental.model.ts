@@ -1,6 +1,7 @@
 export class Rental {
     id: number;
     startDate: string;
+    dStartDate: Date;
     period: number;
     carId: number;
     carModel: string;

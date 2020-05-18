@@ -1,7 +1,7 @@
 export class City {
-    Id: number;
-    Name: string;
-    Country: string;
+    id: number;
+    name: string;
+    country: string;
  
    constructor(input?: any) {
      Object.assign(this, input);
