@@ -15,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { DetailModalComponent } from './home/detail-modal/detail-modal.component';
 import { SearchPipe } from './shared/search.pipe';
 import { CartModalComponent } from './header/cart-modal/cart-modal.component';
+import { AddComponent } from './add/add.component';
 
 
 
@@ -27,6 +28,7 @@ import { CartModalComponent } from './header/cart-modal/cart-modal.component';
     SearchPipe,
     DetailModalComponent,  
     CartModalComponent,
+    AddComponent,
 
 
   ],

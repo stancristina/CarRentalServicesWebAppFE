@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Car } from './car.model';
+import { City } from './city.model';
+import { Client } from './client.model';
+import { Shop } from './shop.model';
 
 
 @Injectable({
@@ -34,8 +38,43 @@ export class ApiService {
     return this.http.get(this.baseUrl + '/client/' + id.toString(), { headers: this.header });
   }
 
-  getClients(id: number) {
+  getClients() {
     return this.http.get(this.baseUrl + '/client/', { headers: this.header });
+  }
+
+  getCities() {
+    return this.http.get(this.baseUrl + '/city', { headers: this.header });
+  }
+
+  getShops() {
+    return this.http.get(this.baseUrl + '/shop', { headers: this.header });
+  }
+
+
+  addCar(car: Car) {
+    return this.http.post(this.baseUrl + '/car', car, { headers: this.header });
+  }
+
+  addCity(city: City) {
+    return this.http.post(this.baseUrl + '/city', city, { headers: this.header });
+  }
+
+  addClient(client: Client) {
+    return this.http.post(this.baseUrl + '/client', client, { headers: this.header });
+  }
+
+  addShop(shop: Shop) {
+    return this.http.post(this.baseUrl + '/shop', shop, { headers: this.header });
+  }
+
+  addRental(rental) {
+    return this.http.post(this.baseUrl + '/rental', {
+      'dStartDate': rental.dStartDate,
+      'period': rental.period,
+      'carId': rental.carId,
+      'clientId': rental.clientId
+    }, { headers: this.header });
+
   }
 }
 
