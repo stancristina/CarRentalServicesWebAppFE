@@ -10,7 +10,7 @@
   font-size: 25px;
   font-weight: 500;
   text-transform: uppercase;
-  margin-left: -40px;
+  margin-left: -90px;
   margin-bottom: 6px;
 }
 
@@ -18,7 +18,7 @@
 .details {
 
   /* padding: 30px; */
-  padding-left: 300px;
+  padding-left: 250px;
   width: 100%;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -34,7 +34,19 @@ ul {
   margin-left: 20px;
 }
 
-button {
+.buttons btn-success {
+  text-transform: initial;
+  font-style: bold;
+  display: block;
+  font-size: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  color: antiquewhite;
+  bottom: 9px;
+  right: 3px;
+}
+
+.buttons {
   text-transform: initial;
   font-style: bold;
   display: block;
@@ -44,8 +56,8 @@ button {
   color: antiquewhite;
 }
 
-.button {
+.buttons {
   position: absolute;
-  bottom: 9px;
-  right: 5px;
+  bottom: 5px;
+  right: -200px;
 }

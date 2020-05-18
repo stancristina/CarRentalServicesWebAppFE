@@ -76,5 +76,9 @@ export class ApiService {
     }, { headers: this.header });
 
   }
+
+  deleteRental(id: Number) {
+    return this.http.delete(this.baseUrl + '/rental/' + id.toString(), { headers: this.header }).subscribe();
+  }
 }
 

@@ -17,7 +17,9 @@ export class CartService {
     var idsList = this.getFromLocalStorage();
     for(let i = 0; i < idsList.length; i ++) {
       this.api.getRental(idsList[i]).subscribe((data: Rental) => {
-        this.rentals.push(data);
+        if(data.id != 0) {
+          this.rentals.push(data);
+        }
       },
         (er: Error) => {
           console.log('err', er);

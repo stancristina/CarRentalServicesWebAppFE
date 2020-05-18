@@ -21,11 +21,12 @@
             </div>
           </div>
           <div class="row">
-            <div class="button">
+            <div class = "buttons">
 
-              <button type="button" class="btn btn-dark" (click)="addToCart(rental)">Add to cart</button>
-
+              <button mdbBtn type="button" gradient="aqua" rounded="true" mdbWavesEffect (click)="addToCart(rental)">Add to cart</button>
+              <button mdbBtn type="button" gradient="rainy-ashville" rounded="true" mdbWavesEffect (click)="deleteFromHome(rental.id)">Delete</button>
             </div>
+
           </div>
         </div>
 

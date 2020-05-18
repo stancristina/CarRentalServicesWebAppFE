@@ -41,17 +41,10 @@
       </div>
       <!--Footer-->
       <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-outline-primary"
-          data-dismiss="modal"
-          (click)="modal.hide()"
-        >
-          Close
-        </button>
-        <button class="btn btn-primary" (click)="save()">
-          Save changes
-        </button>
+        <button mdbBtn type="button" gradient="blue" rounded="true" mdbWavesEffect (click)="modal.hide()">Close</button>
+        <button mdbBtn type="button" gradient="peach" rounded="true" mdbWavesEffect (click)="save()"> Save changes</button>
+
+        
       </div>
     </div>
   </div>

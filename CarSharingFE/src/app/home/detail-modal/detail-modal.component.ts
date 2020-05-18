@@ -39,4 +39,10 @@ export class DetailModalComponent implements OnInit {
     this.cart.add(rental);
     this.modal.hide();
   }
+
+  deleteFromHome(id: number) {
+    this.api.deleteRental(id);
+    this.modal.hide();
+    window.location.reload();  
+  }
 }

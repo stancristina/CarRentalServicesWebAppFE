@@ -1,4 +1,5 @@
 export class Rental {
+
     id: number;
     startDate: string;
     dStartDate: Date;

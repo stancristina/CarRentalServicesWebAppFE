@@ -7,7 +7,8 @@
   </div>
 </div>
 
-<div class="form-container border ">
+<div class = "opt">
+<div class="form-container">
 
   <form class="text-center " [formGroup]="addRentalForm"  *ngIf="selectedOption === 'Rental'">
 
@@ -16,49 +17,41 @@
     <input type="number"  class="form-control mb-4" placeholder="Period" formControlName="period"
          autocomplete="off"  >
 
-    <label for="carSelect">
-        Car
-    </label>
-
-    <select class="browser-default custom-select" formControlName="carId" id="carSelect">
+    <select class="browser-default custom-select form-control mb-4" formControlName="carId" id="carSelect">
+        <option selected value="-1">Select car</option>
         <option *ngFor="let car of cars" [value]="car.id">
             {{car.model}}
         </option>
     </select>
 
-    <label for="carSelect">
-        Client
-    </label>
-
-    <select class="browser-default custom-select" formControlName="clientId" id="clientSelect">
+    <select class="browser-default custom-select form-control mb-4 " formControlName="clientId" id="clientSelect">
+        <option selected value="-1">Select client</option>
         <option *ngFor="let client of clients" [value]="client.id">
             {{client.id}}
         </option>
     </select>
   </form>
 
+</div>
 
-
-  <form class="text-center  " [formGroup]="addCarForm" *ngIf="selectedOption === 'Car'">
+<div class = "opt">
+  <form class="form-container text-center  " [formGroup]="addCarForm" *ngIf="selectedOption === 'Car'">
 
     <input type="text"  class="form-control mb-4" placeholder="Model" formControlName="model"
          autocomplete="off" >
 
-    <label for="shopSelect">
-        Shop
-    </label>
-
-    <select class="browser-default custom-select" formControlName="shopId" id="shopSelect">
+    <select class="browser-default custom-select form-control mb-4" formControlName="shopId" id="shopSelect">
+        <option selected value="-1">Select shop</option>
         <option *ngFor="let shop of shops" [value]="shop.id">
             {{shop.name}}
         </option>
     </select>
   </form>
-
+</div>
 
   
-
-  <form class="text-center  " [formGroup]="addCityForm"  *ngIf="selectedOption === 'City'">
+<div class = "opt">
+  <form class="form-container text-center  " [formGroup]="addCityForm"  *ngIf="selectedOption === 'City'">
 
     <input type="text"  class="form-control mb-4" placeholder="Name" formControlName="name"
          autocomplete="off" >
@@ -68,9 +61,10 @@
 
 
   </form>
-
+</div>
   
-  <form class="text-center  " [formGroup]="addClientForm"  *ngIf="selectedOption === 'Client'">
+<div class = "opt">
+  <form class="form-container text-center  " [formGroup]="addClientForm"  *ngIf="selectedOption === 'Client'">
 
     <input type="text"  class="form-control mb-4" placeholder="CNP" formControlName="CNP"
     autocomplete="off" >
@@ -84,34 +78,31 @@
     <input type="text"  class="form-control mb-4" placeholder="Address" formControlName="address"
     autocomplete="off" >
 
-
-    
   </form>
+</div>
 
-
-  <form class="text-center  " [formGroup]="addShopForm"  *ngIf="selectedOption === 'Shop'">
+<div class = "opt">
+  <form class="form-container text-center  " [formGroup]="addShopForm"  *ngIf="selectedOption === 'Shop'">
 
     <input type="text"  class="form-control mb-4" placeholder="Name" formControlName="name"
          autocomplete="off" >
 
-    <label for="citySelect">
-        City
-    </label>
-
-    <select class="browser-default custom-select" formControlName="cityId" id="citySelect">
+    <select class="browser-default custom-select mb-4 form-control" formControlName="cityId" id="citySelect">
+        <option selected value="-1">Select city</option>
         <option *ngFor="let city of cities" [value]="city.id">
             {{city.name}}
         </option>
     </select>
 
   </form>
+  </div>
 
 
 
 
   <button mdbBtn color="danger" block="true"  type="submit" (click)="add()" [disabled]="currentFormRef.invalid" >Add</button>
     <p *ngIf="success" style="color: green; font-size: 22px;">{{selectedOption.toUpperCase()}} added successfully</p>
-    <p *ngIf="success === false" style="color: red; font-size: 22px;">Something went wrong</p>
+    <p *ngIf="success === false" style="color: red; font-size: 22px;">Something went wrong, please try again</p>
 </div>
 </div>
 

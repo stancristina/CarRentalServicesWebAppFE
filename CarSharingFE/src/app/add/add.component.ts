@@ -35,13 +35,13 @@ export class AddComponent implements OnInit {
     this.addRentalForm = this.fb.group({
       dStartDate: [null, Validators.required],
       period: [null, Validators.required],
-      carId: [null, Validators.required],
-      clientId: [null, Validators.required]
+      carId: [-1, Validators.min(0)],
+      clientId: [-1, Validators.min(0)]
     });
 
     this.addCarForm = this.fb.group({
       model: [null, Validators.required],
-      shopId: [null, Validators.required],
+      shopId: [-1, Validators.min(0)],
     });
 
     this.addCityForm = this.fb.group({
@@ -51,7 +51,7 @@ export class AddComponent implements OnInit {
 
     this.addShopForm = this.fb.group({
       name: [null, Validators.required],
-      cityId: [null, Validators.required],
+      cityId: [-1, Validators.min(0)],
     });
 
     this.addClientForm = this.fb.group({
@@ -61,7 +61,7 @@ export class AddComponent implements OnInit {
       address: [null, Validators.required],
     });
 
-    this.currentFormRef = this.addShopForm;
+    this.currentFormRef = this['add' + this.selectedOption + 'Form'];
 
     this.api.getCities().subscribe((data: City[]) => {
       this.cities = data;
