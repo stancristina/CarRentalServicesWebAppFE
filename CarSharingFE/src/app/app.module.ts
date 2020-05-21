@@ -16,9 +16,11 @@ import { DetailModalComponent } from './home/detail-modal/detail-modal.component
 import { SearchPipe } from './shared/search.pipe';
 import { CartModalComponent } from './header/cart-modal/cart-modal.component';
 import { AddComponent } from './add/add.component';
-
-
-
+import { EditComponent } from './edit/edit.component';
+import { EditRentalModalComponent } from './edit/edit-rental-modal/edit-rental-modal.component';
+import { EditCarModalComponent } from './edit/edit-car-modal/edit-car-modal.component';
+import { EditShopModalComponent} from './edit/edit-shop-modal/edit-shop-modal.component';
+import { EditClientModalComponent} from './edit/edit-client-modal/edit-client-modal.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,11 @@ import { AddComponent } from './add/add.component';
     DetailModalComponent,  
     CartModalComponent,
     AddComponent,
-
+    EditComponent,
+    EditRentalModalComponent,
+    EditCarModalComponent,
+    EditShopModalComponent,
+    EditClientModalComponent
 
   ],
   imports: [

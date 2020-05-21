@@ -1,0 +1,163 @@
+<h1>Edit page</h1>
+<div class="container">
+  <div class="rentals">
+  <p>Rentals</p>
+  <table class="table table-striped ">
+    <thead>
+    <tr>
+      <th scope="col" style="width:10%">Rental Id</th>
+      <th scope="col" style="width:10%">Car</th>
+      <th scope="col" style="width:20%">Client First Name</th>
+      <th scope="col" style="width:20%">Client Last Name</th>
+      <th scope="col" style="width:10%">Start Date</th>
+      <th scope="col" style="width:10%">Period(days)</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let rental of rentals;let i=index">
+      <th scope="row">{{rental.id}}</th>
+      <td>{{rental.carModel}}</td>
+      <td>{{rental.clientFirstName}}</td>
+      <td>{{rental.clientLastName}}</td>
+      <td>{{rental.startDate}}</td>
+      <td>{{rental.period}}</td>
+      <td><a class=" dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false"></a>
+
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" (click)="showM1(rental.id)"><i class="fas fa-pen"></i> Edit</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="deleteRental(rental.id)"><i class="fas fa-eraser"></i> Delete</a>
+        </div>
+      </td>
+
+
+    </tr>
+
+
+    </tbody>
+  </table>
+
+  
+  
+  </div>
+
+  
+
+  <div class="cars">
+    <p>Cars</p>
+    <table class="table table-striped ">
+      <thead>
+      <tr>
+        <th scope="col" style="width:10%">ID</th>
+        <th scope="col" style="width:30%">Model</th>
+        <th scope="col" style="width:20%">Shop Id</th>
+  
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let car of cars;let i=index">
+        <th scope="row">{{car.id}}</th>
+        <td>{{car.model}}</td>
+        <td>{{car.shopId}}</td>
+
+        <td><a class=" dropdown-toggle"  id="navbarDropdown2" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false"></a>
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown2">
+            <a class="dropdown-item" (click)="showM2(car.id)"><i class="fas fa-pen"></i> Edit</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="deleteCar(car.id)" ><i class="fas fa-eraser"></i> Delete</a>
+          </div>
+        </td>
+
+
+      </tr>
+
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="shops">
+    <p>Shops</p>
+    <table class="table table-striped ">
+      <thead>
+      <tr>
+        <th scope="col" style="width:10%">ID</th>
+        <th scope="col" style="width:30%">Name</th>
+        <th scope="col" style="width:20%">City Id</th>
+  
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let shop of shops;let i=index">
+        <th scope="row">{{shop.id}}</th>
+        <td>{{shop.name}}</td>
+        <td>{{shop.cityId}}</td>
+
+        <td><a class=" dropdown-toggle"  id="navbarDropdown2" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false"></a>
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown2">
+            <a class="dropdown-item" (click)="showM3(shop.id)"><i class="fas fa-pen"></i> Edit</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="deleteShop(shop.id)" ><i class="fas fa-eraser"></i> Delete</a>
+          </div>
+        </td>
+
+
+      </tr>
+
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="shops">
+    <p>Clients</p>
+    <table class="table table-striped ">
+      <thead>
+      <tr>
+        <th scope="col" style="width:10%">ID</th>
+        <th scope="col" style="width:30%">CNP</th>
+        <th scope="col" style="width:30%">First Name</th>
+        <th scope="col" style="width:20%">Last Name</th>
+        <th scope="col" style="width:20%">Address</th>
+  
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let client of clients;let i=index">
+        <th scope="row">{{client.id}}</th>
+        <td>{{client.cnp}}</td>
+        <td>{{client.firstName}}</td>
+        <td>{{client.lastName}}</td>
+        <td>{{client.address}}</td>
+
+        <td><a class=" dropdown-toggle"  id="navbarDropdown2" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false"></a>
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown2">
+            <a class="dropdown-item" (click)="showM4(client.id)"><i class="fas fa-pen"></i> Edit</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="deleteClient(client.id)" ><i class="fas fa-eraser"></i> Delete</a>
+          </div>
+        </td>
+
+
+      </tr>
+
+
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-edit-rental-modal #editRentalModal (change)="onEditFinished($event)" ></app-edit-rental-modal>
+<app-edit-car-modal #editCarModal (change)="onEditFinished($event)" ></app-edit-car-modal>
+<app-edit-shop-modal #editShopModal (change)="onEditFinished($event)" ></app-edit-shop-modal>
+<app-edit-client-modal #editClientModal (change)="onEditFinished($event)"></app-edit-client-modal>

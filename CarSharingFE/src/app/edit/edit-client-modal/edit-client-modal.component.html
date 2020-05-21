@@ -1,0 +1,28 @@
+<div bsModal class=" row modal fade" #editClientModal="bs-modal" tabindex="-1" role="dialog" aria-labelledby="editClientModal"
+     aria-hidden="true" (onHide)=" this.editClientForm.reset();">
+  <div class="col-md-6 col-sm-6 col-lg-4 mx-auto my-4" *ngIf="editClientForm">
+
+
+    <form class="text-center border border-light p-5" [formGroup]="editClientForm">
+
+      <p class="h4 mb-4">Edit Client</p>
+
+     
+
+    
+      
+      <label for="cnp" >CNP</label>
+      <input type="text" id="cnp" class="form-control mb-4" formControlName="cnp" autocomplete="off" >
+      
+      <label for="firstName">First Name</label>
+      <input type="text" id="FirstName" class="form-control mb-4" formControlName="firstName" autocomplete="off" >
+
+      <label for="LastName">Last Name</label>
+      <input type="text" id="LastName" class="form-control mb-4" formControlName="lastName" autocomplete="off" >
+
+      <label for="Address">Address</label>
+      <input type="text" id="Address" class="form-control mb-4" formControlName="address" autocomplete="off" >
+
+      <button mdbBtn color="danger" block="true" class="my-4"  [disabled]="!this.editClientForm.valid || this.editClientForm.pristine" (click)='editClient()'>Edit</button>
+
+

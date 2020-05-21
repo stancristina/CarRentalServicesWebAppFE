@@ -1,12 +1,14 @@
 
 import {Injectable} from '@angular/core';
 import {Rental} from './rental.model';
+import {Car} from './car.model';
 import {ApiService} from './api.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
+ 
 
   rentals: Rental[];
   localStorageKey: string;
