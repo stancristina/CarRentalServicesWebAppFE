@@ -1,6 +1,6 @@
 export class Client {
     id: number;
-    CNP: string;
+    cnp: string;
     firstName: string;
     lastName: string;
     address: string;

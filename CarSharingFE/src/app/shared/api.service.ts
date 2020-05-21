@@ -4,12 +4,16 @@ import { Car } from './car.model';
 import { City } from './city.model';
 import { Client } from './client.model';
 import { Shop } from './shop.model';
+import { EditRentalModalComponent } from '../edit/edit-rental-modal/edit-rental-modal.component';
+import { EditCarModalComponent } from '../edit/edit-car-modal/edit-car-modal.component';
+import { Rental } from './rental.model';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+  
 
   constructor(private http: HttpClient) {}
 
@@ -18,6 +22,56 @@ export class ApiService {
   });
   baseUrl = 'https://localhost:44376/api';
  
+  editRental(rental: Rental) {
+    return this.http.put(this.baseUrl + '/rental/' + rental.id.toString(), {
+      'carModel': rental.carModel,
+      'clientFirstName':rental.clientFirstName,
+      'clientLastName':rental.clientLastName,
+      'dStartDate':rental.dStartDate,
+      'period':rental.period
+    }, { headers: this.header })
+  
+
+}
+
+  editClient(client: Client) {
+    return this.http.put(this.baseUrl + '/client/' + client.id.toString(),{
+      'cnp':client.cnp,
+      'firstName':client.firstName,
+      'lastName':client.lastName,
+      'address':client.address
+    }, { headers: this.header })
+}
+  editCar(car: Car) {
+  return this.http.put(this.baseUrl + '/car/' + car.id.toString(),{
+    'model':car.model,
+    'shopId':car.shopId
+  }, { headers: this.header })
+}
+
+editShop(shop: Shop) {
+  return this.http.put(this.baseUrl + '/shop/' + shop.id.toString(),{
+    'name':shop.name,
+    'cityId':shop.cityId
+  }, { headers: this.header })
+}
+  deleteRental(id:number){
+    return this.http.delete(this.baseUrl + '/rental/' + id.toString(), { headers: this.header });
+
+  }
+
+  deleteCar(id: number) {
+    return this.http.delete(this.baseUrl + '/car/' + id.toString(), { headers: this.header });
+  }
+
+  deleteClient(id: number) {
+    return this.http.delete(this.baseUrl + '/client/' + id.toString(), { headers: this.header });
+  }
+
+  deleteShop(id: number) {
+    return this.http.delete(this.baseUrl + '/shop/' + id.toString(), { headers: this.header });
+  }
+
   getRental(id: number) {
     return this.http.get(this.baseUrl + '/rental/' + id.toString(), { headers: this.header });
   }
@@ -36,6 +90,11 @@ export class ApiService {
 
   getClient(id: number) {
     return this.http.get(this.baseUrl + '/client/' + id.toString(), { headers: this.header });
+  }
+
+  getShop(id:number){
+    return this.http.get(this.baseUrl + '/shop/' + id.toString(), { headers: this.header });
+
   }
 
   getClients() {
@@ -75,10 +134,9 @@ export class ApiService {
       'clientId': rental.clientId
     }, { headers: this.header });
 
+
   }
 
-  deleteRental(id: Number) {
-    return this.http.delete(this.baseUrl + '/rental/' + id.toString(), { headers: this.header }).subscribe();
-  }
+ 
 }
 

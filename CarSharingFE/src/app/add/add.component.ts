@@ -55,7 +55,7 @@ export class AddComponent implements OnInit {
     });
 
     this.addClientForm = this.fb.group({
-      CNP: [null, Validators.required],
+      cnp: [null, Validators.required],
       firstName: [null, Validators.required],
       lastName: [null, Validators.required],
       address: [null, Validators.required],
@@ -65,7 +65,6 @@ export class AddComponent implements OnInit {
 
     this.api.getCities().subscribe((data: City[]) => {
       this.cities = data;
-      console.log(this.cities);
     },
     (er: Error) => {
       console.log('err', er);
@@ -74,7 +73,6 @@ export class AddComponent implements OnInit {
     
     this.api.getCars().subscribe((data: Car[]) => {
       this.cars = data;
-      console.log(this.cars);
     },
     (er: Error) => {
       console.log('err', er);
@@ -83,7 +81,6 @@ export class AddComponent implements OnInit {
 
     this.api.getShops().subscribe((data: Shop[]) => {
       this.shops = data;
-      console.log(this.shops);
     },
     (er: Error) => {
       console.log('err', er);
@@ -92,7 +89,6 @@ export class AddComponent implements OnInit {
 
     this.api.getClients().subscribe((data: Client[]) => {
       this.clients = data;
-      console.log(this.clients);
     },
     (er: Error) => {
       console.log('err', er);

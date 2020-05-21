@@ -36,4 +36,5 @@ export class CartModalComponent implements OnInit {
     this.modal.hide();
   }
 
+
 }

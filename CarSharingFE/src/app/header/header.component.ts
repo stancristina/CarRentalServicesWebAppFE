@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
 
   openCart() {
     this.detailModal.initialize();
+    
    }
 
 }
