@@ -1,15 +1,19 @@
+* {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 .table {
     width: 70%;
     margin: 20px;
-    background-color: aqua;
-    color:green;
-    font-size:50px;
+    background-color: grey;
+    border-radius: 25px;
+    color:white;
+    font-size:15px;
   }
   
   .container {
     padding: 30px;
     padding-left: 100px;
-  
   }
   
   p {
@@ -20,7 +24,7 @@
   h1 {
     margin-left: 30px;
     margin-top: 20px;
-    font-weight: 500;
-    color:red
+    font-weight: 50;
+    color:black
   }
   

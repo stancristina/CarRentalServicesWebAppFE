@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { GoogleMapsModule } from '@angular/google-maps'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,8 @@ import { EditRentalModalComponent } from './edit/edit-rental-modal/edit-rental-m
 import { EditCarModalComponent } from './edit/edit-car-modal/edit-car-modal.component';
 import { EditShopModalComponent} from './edit/edit-shop-modal/edit-shop-modal.component';
 import { EditClientModalComponent} from './edit/edit-client-modal/edit-client-modal.component';
+import { ContactComponent } from './contact/contact.component';
+import { AssistanceComponent } from './assistance/assistance.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,9 @@ import { EditClientModalComponent} from './edit/edit-client-modal/edit-client-mo
     EditRentalModalComponent,
     EditCarModalComponent,
     EditShopModalComponent,
-    EditClientModalComponent
+    EditClientModalComponent,
+    ContactComponent,
+    AssistanceComponent
 
   ],
   imports: [
@@ -47,7 +52,8 @@ import { EditClientModalComponent} from './edit/edit-client-modal/edit-client-mo
     MDBBootstrapModule.forRoot(),
     ModalModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GoogleMapsModule
   ],
   exports: [],
   bootstrap: [AppComponent]
